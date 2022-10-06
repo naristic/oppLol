@@ -8,13 +8,15 @@ class Personaje:
     __velAtaque=0
     __armadura=0
     __resMagica=0
+    __daño=0
 
 
-    def __init__(self,nombre,tipoDaño,vida,velAtaque) :
+    def __init__(self,nombre,tipoDaño,vida,velAtaque,daño) :
         self.__nombre = nombre
         self.__tipoDaño = tipoDaño
         self.__vida = vida
         self.__velAtaque = velAtaque
+        self.__daño = daño
         
     
         
@@ -32,7 +34,7 @@ class Personaje:
         
         for i in range(len(d)):
             if d[i].getNombre()==n.getNombre():
-                d[i].setVida(d[i].getVida()-50)
+                d[i].setVida(d[i].getVida()-self.__daño)
                 
         return d
     
